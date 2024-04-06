@@ -1,1 +1,12 @@
-<p>article works!</p>
+<div class="card articleInfo">
+  <img [src]="urlImg"  [alt]="textAltImg">
+    <div class="card-body">
+      <h5 class="card-title">{{titreArticle}}</h5>
+      <h6 class="card-title">{{prixArticle}} euro </h6>
+
+      <p class="card-text">description</p>
+      <button class="btn btn-primary" (click)="onlike()">j'aime</button> 
+      <p class="card-text">Total like: {{ TotaLike }}</p>
+
+    </div>
+  </div>

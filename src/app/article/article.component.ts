@@ -1,4 +1,5 @@
-import { Component, OnInit} from '@angular/core';
+import { outputAst } from '@angular/compiler';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-article',
@@ -6,11 +7,16 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit{
-titreArticle: string =  "titre de l'article";
-prixArticle: number = 12;
+// titreArticle: string =  "titre de l'article";
+// prixArticle: number = 12;
 textAltImg: string= "titre alternative de l'image";
 urlImg: string = "assets/bike-909690_1280.jpg";
 TotaLike: number = 0;
+comment: string= "ceci est un commentaire"
+
+@Input() titreArticle: string;
+@Input() prixArticle: number;
+@Output() info = new EventEmitter<string>();
 
    constructor(){}
   ngOnInit(): void {

@@ -7,6 +7,8 @@
       <p class="card-text">description</p>
       <button class="btn btn-primary" (click)="onlike()">j'aime</button> 
       <p class="card-text">Total like: {{ TotaLike }}</p>
+      <input type="text" placeholder="Ecris ton commentaire" [(ngModel)]="comment">
+      <p>Commentaire : {{ comment }}</p>
 
     </div>
   </div>

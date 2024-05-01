@@ -10,9 +10,9 @@ export class ArticleComponent implements OnInit{
 // titreArticle: string =  "titre de l'article";
 // prixArticle: number = 12;
 textAltImg: string= "titre alternative de l'image";
-urlImg: string = "assets/bike-909690_1280.jpg";
+urlImg: string = "assets/bike-909690_1280.jpg"; 
 TotaLike: number = 0;
-comment: string= "ceci est un commentaire"
+comment: string= "ceci est un commentaire"                    
 
 @Input() titreArticle: string;
 @Input() prixArticle: number;
@@ -23,6 +23,7 @@ comment: string= "ceci est un commentaire"
   }
   onlike(){
     this.TotaLike++;
+    this.info.emit(this.titreArticle);
   }
 
 }

@@ -9,13 +9,22 @@ import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 export class ArticleComponent implements OnInit{
 // titreArticle: string =  "titre de l'article";
 // prixArticle: number = 12;
-textAltImg: string= "titre alternative de l'image";
-urlImg: string = "assets/bike-909690_1280.jpg"; 
+// textAltImg: string= "titre alternative de l'image";
+// urlImg: string = "assets/bike-909690_1280.jpg"; 
 TotaLike: number = 0;
-comment: string= "ceci est un commentaire"                    
+comment: string= "ceci est un commentaire"        
+// dispo: boolean = false;            
 
 @Input() titreArticle: string;
 @Input() prixArticle: number;
+@Input() description: string;
+@Input() urlImg: string;
+@Input() textAltImg: string;
+@Input() dispo: boolean;
+
+
+
+
 @Output() info = new EventEmitter<string>();
 
    constructor(){}

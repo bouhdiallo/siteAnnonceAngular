@@ -28,9 +28,18 @@
   </div>
 <!-- <div class="d-flex justify-content-around align-items-center" style="padding-top: 2%; font-size: 1.5rem;"> -->
     <div id="home">
-  <app-article [titreArticle]=" 'Moto' " [prixArticle]="prix1" (info)="onAffiche($event)"></app-article>
-  <app-article [titreArticle]=" 'airpod' " [prixArticle]="prix2" (info)="onAffiche($event)"></app-article>
-  <app-article [titreArticle]=" 'ordinateur' " [prixArticle]="prix3" (info)="onAffiche($event)"></app-article>
+  <app-article
+  *ngFor  = "let element of liste" 
+  [titreArticle]="element.titreArticle" 
+  [prixArticle]="element.prixArticle" 
+  [description]="element.description" 
+  [urlImg]="element.urlImg" 
+  [textAltImg]="element.textAltImg" 
+  [dispo]="element.dispo" 
+  (info)="onAffiche($event)">
+</app-article>
+  <!-- <app-article [titreArticle]=" 'airpod' " [prixArticle]="prix2" (info)="onAffiche($event)"></app-article>
+  <app-article [titreArticle]=" 'ordinateur' " [prixArticle]="prix3" (info)="onAffiche($event)"></app-article> -->
 </div>
 </div>
 

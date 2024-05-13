@@ -1,14 +1,28 @@
 <div class="card articleInfo">
   <img [src]="urlImg"  [alt]="textAltImg">
     <div class="card-body">
-      <h5 class="card-title">
+      <h5 class="card-title" [ngStyle] = "{ color: getColor() }">
         {{titreArticle}}
         <span *ngIf="dispo === false"> -Indisponible</span>
       </h5>
       <h6 class="card-title">{{prixArticle}} euro </h6>
 
       <p class="card-text">description</p>
-      <button class="btn btn-primary" (click)="onlike()">j'aime</button> 
+      <button (click) = "onlike()"
+                [ngClass] = "{
+                  'show' :jaime===true,
+                  'hidden' : jaime===false
+                }"
+      >jaime</button>
+      <button class="nolike"
+      (click) = "onlike()"
+      [ngClass] = "{
+        'show' :jaime===false,
+        'hidden' : jaime=== true 
+      }"
+      
+      >je n'aime pas </button> 
+ 
       <p class="card-text">Total like: {{ TotaLike }}</p>
       <input type="text" placeholder="Ecris ton commentaire" [(ngModel)]="comment">
       <p>Commentaire : {{ comment }}</p>

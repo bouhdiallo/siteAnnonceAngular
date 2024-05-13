@@ -21,6 +21,7 @@ comment: string= "ceci est un commentaire"
 @Input() urlImg: string;
 @Input() textAltImg: string;
 @Input() dispo: boolean;
+jaime: boolean = true;
 
 
 
@@ -30,9 +31,30 @@ comment: string= "ceci est un commentaire"
    constructor(){}
   ngOnInit(): void {
   }
+  // onlike(){
+  //   this.TotaLike++;
+  //   this.info.emit(this.titreArticle);
+  // }
+
+  getColor() {
+    if(this.dispo === true) {
+      return "green"
+    } else {
+      return "red"
+    }
+  }
+
   onlike(){
+
+    if(this.jaime===true) {
+
     this.TotaLike++;
-    this.info.emit(this.titreArticle);
+    this.jaime = false;
+    } else {
+      this.TotaLike--;
+      this.jaime=true;
+    }
+    this.info.emit(this.titreArticle)
   }
 
 }
